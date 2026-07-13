@@ -200,7 +200,3 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ---
-
-## Lizenz
-
-Dieses Projekt kann frei unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) verwendet, verändert und weiterverbreitet werden. Füge bei Bedarf eine `LICENSE`-Datei mit dem MIT-Lizenztext in dein Repository ein.
