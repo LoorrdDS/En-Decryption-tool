@@ -28,7 +28,7 @@ Aus deinem Passwort wird über **PBKDF2-HMAC-SHA256** (480'000 Iterationen) ein 
 
 Falls du nur das fertige Tool nutzen möchtest, ohne Python zu installieren:
 
-[![Download FernetTool.exe](https://img.shields.io/github/v/release/LoorrdDS/En-Decryption-tool?label=Download%20FernetTool.exe&style=for-the-badge)](https://github.com/LoorrdDS/En-Decryption-tool/releases/latest/download/FernetTool.exe)
+[![Download FernetTool.exe](https://img.shields.io/github/v/release/LoorrdDS/En-Decryption-tool?label=Download%20FernetTool.exe&style=for-the-badge)]([https://github.com/LoorrdDS/En-Decryption-tool/releases/latest/download/FernetTool.exe](https://github.com/LoorrdDS/En-Decryption-tool/releases/tag/0.2))
 
 1. Auf den Button oben klicken (lädt automatisch die neueste `FernetTool.exe` herunter), oder direkt auf der **[Releases-Seite](https://github.com/LoorrdDS/En-Decryption-tool/releases)** die gewünschte Version wählen.
 2. Öffne eine Konsole (PowerShell oder CMD) im Download-Ordner und starte:
