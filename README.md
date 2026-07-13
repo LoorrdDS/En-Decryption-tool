@@ -8,20 +8,44 @@ Aus deinem Passwort wird über **PBKDF2-HMAC-SHA256** (480'000 Iterationen) ein 
 
 ## Inhaltsverzeichnis
 
-- [Voraussetzungen](#voraussetzungen)
-- [Installation](#installation)
-  - [1. Repository herunterladen](#1-repository-herunterladen)
-  - [2. Python prüfen](#2-python-prüfen)
-  - [3. Virtuelle Umgebung erstellen (empfohlen)](#3-virtuelle-umgebung-erstellen-empfohlen)
-  - [4. Abhängigkeiten installieren](#4-abhängigkeiten-installieren)
+- [Schnellstart: Nur die .exe verwenden (Windows, ohne Python)](#schnellstart-nur-die-exe-verwenden-windows-ohne-python)
+- [Alternativ: Aus dem Quellcode ausführen](#alternativ-aus-dem-quellcode-ausführen)
+  - [Voraussetzungen](#voraussetzungen)
+  - [Installation](#installation)
 - [Verwendung](#verwendung)
   - [Programm starten](#programm-starten)
   - [Nachricht verschlüsseln](#nachricht-verschlüsseln)
   - [Nachricht entschlüsseln](#nachricht-entschlüsseln)
+- [Eigene .exe bauen](#eigene-exe-bauen)
 - [Funktionsweise](#funktionsweise)
 - [Sicherheitshinweise](#sicherheitshinweise)
 - [Fehlerbehebung](#fehlerbehebung)
 - [Lizenz](#lizenz)
+
+---
+
+## Schnellstart: Nur die .exe verwenden (Windows, ohne Python)
+
+Falls du nur das fertige Tool nutzen möchtest, ohne Python zu installieren:
+
+[![Download FernetTool.exe](https://img.shields.io/github/v/release/LoorrdDS/En-Decryption-tool?label=Download%20FernetTool.exe&style=for-the-badge)](https://github.com/LoorrdDS/En-Decryption-tool/releases/latest/download/FernetTool.exe)
+
+1. Auf den Button oben klicken (lädt automatisch die neueste `FernetTool.exe` herunter), oder direkt auf der **[Releases-Seite](https://github.com/LoorrdDS/En-Decryption-tool/releases)** die gewünschte Version wählen.
+2. Öffne eine Konsole (PowerShell oder CMD) im Download-Ordner und starte:
+   ```bash
+   .\FernetTool.exe
+   ```
+   > Ein reiner Doppelklick funktioniert auch, schliesst das Fenster aber sofort wieder, falls ein Fehler auftritt. Über die Konsole gestartet bleiben Fehlermeldungen sichtbar.
+
+Das war's — keine weitere Installation nötig. Die Bedienung selbst ist identisch zur unten beschriebenen [Verwendung](#verwendung).
+
+> ⚠️ **Hinweis:** Windows Defender / SmartScreen zeigt bei selbst erstellten `.exe`-Dateien manchmal eine Warnung, da dieselbe Bündelungstechnik (PyInstaller) auch von Malware-Autoren genutzt wird. Das ist bei diesem Tool unbedenklich — sofern du die Datei aus diesem Repository heruntergeladen hast.
+
+---
+
+## Alternativ: Aus dem Quellcode ausführen
+
+Diese Variante eignet sich, wenn du den Code selbst einsehen, anpassen oder auf macOS/Linux verwenden möchtest (die fertige `.exe` läuft nur unter Windows).
 
 ---
 
@@ -40,8 +64,8 @@ Aus deinem Passwort wird über **PBKDF2-HMAC-SHA256** (480'000 Iterationen) ein 
 **Option A – mit Git:**
 
 ```bash
-git clone https://github.com/LoorrdDS/En-Decryption-tool.git
-cd En-Decryption-tool
+git clone https://github.com/DEIN-BENUTZERNAME/DEIN-REPO-NAME.git
+cd DEIN-REPO-NAME
 ```
 
 **Option B – ohne Git:**
@@ -160,6 +184,27 @@ Wird ein falscher Master-Key verwendet, meldet das Programm einen Fehler statt e
 
 ---
 
+## Eigene .exe bauen
+
+Falls du selbst eine Windows-`.exe` aus dem Quellcode erstellen möchtest (z. B. um eine neue Version zu veröffentlichen):
+
+```bash
+pip install pyinstaller
+python -m PyInstaller --onefile --console --name FernetTool crypto_tool.py
+```
+
+> Falls `pyinstaller` als Befehl nicht erkannt wird ("command not found"), nutze immer `python -m PyInstaller ...` statt `pyinstaller ...` — das umgeht PATH-Probleme zuverlässig.
+
+Die fertige Datei liegt danach unter:
+
+```
+dist/FernetTool.exe
+```
+
+Diese Datei kann direkt weitergegeben oder als [GitHub Release](https://github.com/LoorrdDS/En-Decryption-tool/releases) hochgeladen werden. Die Ordner `build/` und die Datei `FernetTool.spec`, die PyInstaller zusätzlich erzeugt, werden nicht benötigt und sollten nicht mit hochgeladen werden.
+
+---
+
 ## Funktionsweise
 
 | Schritt | Beschreibung |
@@ -200,3 +245,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ---
+
+## Lizenz
+
+Dieses Projekt kann frei unter der [MIT-Lizenz](https://opensource.org/licenses/MIT) verwendet, verändert und weiterverbreitet werden. Füge bei Bedarf eine `LICENSE`-Datei mit dem MIT-Lizenztext in dein Repository ein.
