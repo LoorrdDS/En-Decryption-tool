@@ -40,7 +40,7 @@ Aus deinem Passwort wird über **PBKDF2-HMAC-SHA256** (480'000 Iterationen) ein 
 **Option A – mit Git:**
 
 ```bash
-git clone https://github.com/DEIN-BENUTZERNAME/DEIN-REPO-NAME.git
+git clone https://github.com/LoorrdDS/En-Decryption-tool.git
 cd En-Decryption-tool
 ```
 
